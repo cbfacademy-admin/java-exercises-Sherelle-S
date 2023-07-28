@@ -1,8 +1,12 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CollectionsAssignment {
 
@@ -34,7 +38,22 @@ public class CollectionsAssignment {
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
         // Your solution must not use any loops.
-        return false;
+        // ArrayList<Integer> originalList = new ArrayList<Integer>();
+        // originalList.addAll(integers);
+
+        // HashSet<Integer>dupesRemoved = new HashSet<Integer>();
+        // dupesRemoved.addAll(originalList);
+
+        // // boolean dupesFound = originalList.size() != dupesRemoved.size();
+        // int numDuplicates = originalList.size() - dupesRemoved.size();
+
+        // if(numDuplicates > 0 ){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+        // // return numDuplicates > 0;
+        // // return false;
     }
 
     /**
@@ -54,7 +73,18 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<Integer>();
+
+        HashSet<Integer>combinedList = new HashSet<Integer>();
+
+        combinedList.addAll(ints1);
+        combinedList.addAll(ints2);
+
+        ArrayList<Integer>completeList = new ArrayList<Integer>();
+        completeList.addAll(combinedList);
+
+        Collections.sort(completeList);
+        return completeList;
+        // return new ArrayList<Integer>();
     }
 
     /**
