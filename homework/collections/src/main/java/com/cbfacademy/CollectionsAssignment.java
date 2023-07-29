@@ -53,7 +53,7 @@ public class CollectionsAssignment {
         //     return false;
         // }
         // // return numDuplicates > 0;
-        // // return false;
+        return false;
     }
 
     /**
@@ -102,6 +102,10 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
+        ArrayList<Integer> elInArgs = new ArrayList<Integer>();
+
+        elInArgs.addAll(ints1);
+        elInArgs.addAll(ints2);
         return new ArrayList<>();
     }
 
