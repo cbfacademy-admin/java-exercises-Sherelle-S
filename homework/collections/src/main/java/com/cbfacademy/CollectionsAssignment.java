@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 public class CollectionsAssignment {
 
     /**
@@ -38,22 +40,24 @@ public class CollectionsAssignment {
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
         // Your solution must not use any loops.
-        // ArrayList<Integer> originalList = new ArrayList<Integer>();
-        // originalList.addAll(integers);
+        ArrayList<Integer> originalList = new ArrayList<Integer>();
+        originalList.addAll(integers);
 
-        // HashSet<Integer>dupesRemoved = new HashSet<Integer>();
-        // dupesRemoved.addAll(originalList);
+        HashSet<Integer>dupesRemoved = new HashSet<Integer>();
+        dupesRemoved.addAll(originalList);
 
-        // // boolean dupesFound = originalList.size() != dupesRemoved.size();
-        // int numDuplicates = originalList.size() - dupesRemoved.size();
+        int osize = originalList.size();
+        int dupesize = dupesRemoved.size();
+        // boolean dupesFound = originalList.size() != dupesRemoved.size();
+        // boolean numDuplicates = originalList.size() > dupesRemoved.size();
 
-        // if(numDuplicates > 0 ){
-        //     return true;
-        // }else{
+        return osize != dupesize;
+
+        // if(originalList.equals(dupesRemoved)){
         //     return false;
+        // }else{
+        //     return true;
         // }
-        // // return numDuplicates > 0;
-        return false;
     }
 
     /**
@@ -83,8 +87,9 @@ public class CollectionsAssignment {
         completeList.addAll(combinedList);
 
         Collections.sort(completeList);
-        return completeList;
         // return new ArrayList<Integer>();
+
+        return completeList;
     }
 
     /**
@@ -102,11 +107,27 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        ArrayList<Integer> elInArgs = new ArrayList<Integer>();
+        ArrayList<Integer> elInBoth = new ArrayList<Integer>();
 
-        elInArgs.addAll(ints1);
-        elInArgs.addAll(ints2);
-        return new ArrayList<>();
+                ArrayList<Integer> collectionOne = new ArrayList<Integer>();
+                ArrayList<Integer> collectionTwo = new ArrayList<Integer>();
+
+                collectionOne.addAll(ints1);
+                collectionTwo.addAll(ints2);
+
+                collectionOne.retainAll(collectionTwo);
+
+                Collections.sort(collectionOne);
+                // ArrayList<Integer> collectionOne = new ArrayList<Integer>();
+                // HashSet<Integer> collectionTwo = new HashSet<Integer>();
+
+                // collectionOne.addAll(ints1);
+                // collectionTwo.addAll(ints2);
+
+                // collectionOne.retainAll(collectionTwo);
+
+
+        return collectionOne;
     }
 
     /**
