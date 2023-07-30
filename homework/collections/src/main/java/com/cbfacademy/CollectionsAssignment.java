@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
 
@@ -39,25 +41,25 @@ public class CollectionsAssignment {
      * @return true if integers contains duplicates, false otherwise
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
+
         // Your solution must not use any loops.
+
         ArrayList<Integer> originalList = new ArrayList<Integer>();
         originalList.addAll(integers);
 
         HashSet<Integer>dupesRemoved = new HashSet<Integer>();
         dupesRemoved.addAll(originalList);
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(dupesRemoved);
 
-        int osize = originalList.size();
-        int dupesize = dupesRemoved.size();
-        // boolean dupesFound = originalList.size() != dupesRemoved.size();
-        // boolean numDuplicates = originalList.size() > dupesRemoved.size();
+       if(originalList.size() > dupesRemoved.size()){
+            return true;
+        }else{
+            return false;
+        }
+           
+        // result is either false or out of bounds. this way is not working
 
-        return osize != dupesize;
-
-        // if(originalList.equals(dupesRemoved)){
-        //     return false;
-        // }else{
-        //     return true;
-        // }
     }
 
     /**
@@ -118,14 +120,6 @@ public class CollectionsAssignment {
                 collectionOne.retainAll(collectionTwo);
 
                 Collections.sort(collectionOne);
-                // ArrayList<Integer> collectionOne = new ArrayList<Integer>();
-                // HashSet<Integer> collectionTwo = new HashSet<Integer>();
-
-                // collectionOne.addAll(ints1);
-                // collectionTwo.addAll(ints2);
-
-                // collectionOne.retainAll(collectionTwo);
-
 
         return collectionOne;
     }
@@ -146,7 +140,24 @@ public class CollectionsAssignment {
         // your counts to find the largest. You'll need a collection that allows
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
-        return "";
+        // ArrayList<String> listOfWords = new ArrayList<String>();
+
+        // String[] words = (String[]) listOfWords.toArray();
+
+        // listOfWords.addAll(list);
+        // HashMap<String, Integer> wordsInString = new HashMap<String,Integer>();
+
+        // for(int i = 0; i < listOfWords.size(); i++){
+        //     if(listOfWords.get(i).contains(i))
+        // }
+
+        // for( String i : words){
+        //     if(listOfWords : contains(i)){
+        //         listOfWords.put(i, listOfWords.get(i) + 1)
+        //     }
+        // }
+        String a = "hello";
+        return a;
     }
 
     public static String getName() {
