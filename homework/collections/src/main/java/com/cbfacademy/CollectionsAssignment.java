@@ -1,8 +1,17 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class CollectionsAssignment {
 
@@ -16,7 +25,13 @@ public class CollectionsAssignment {
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
         // Your solution must traverse the list from last to first element
-        // removing any values less than minValue.
+        // removing any values less than minValue.z
+        for(int i = list.size()-1; i >= 0; i--){
+            if (list.get(i)< minValue){
+                list.remove(list.get(i));
+            }
+             
+        }
     }
 
     /**
@@ -27,8 +42,25 @@ public class CollectionsAssignment {
      * @return true if integers contains duplicates, false otherwise
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
+
         // Your solution must not use any loops.
-        return false;
+
+        ArrayList<Integer> originalList = new ArrayList<Integer>();
+        originalList.addAll(integers);
+
+        HashSet<Integer>dupesRemoved = new HashSet<Integer>();
+        dupesRemoved.addAll(originalList);
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(dupesRemoved);
+
+       if(originalList.size() > dupesRemoved.size()){
+            return true;
+        }else{
+            return false;
+        }
+           
+        // result is either false or out of bounds. this way is not working
+
     }
 
     /**
@@ -48,7 +80,19 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<Integer>();
+
+        HashSet<Integer>combinedList = new HashSet<Integer>();
+
+        combinedList.addAll(ints1);
+        combinedList.addAll(ints2);
+
+        ArrayList<Integer>completeList = new ArrayList<Integer>();
+        completeList.addAll(combinedList);
+
+        Collections.sort(completeList);
+        // return new ArrayList<Integer>();
+
+        return completeList;
     }
 
     /**
@@ -66,7 +110,19 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<>();
+        ArrayList<Integer> elInBoth = new ArrayList<Integer>();
+
+                ArrayList<Integer> collectionOne = new ArrayList<Integer>();
+                ArrayList<Integer> collectionTwo = new ArrayList<Integer>();
+
+                collectionOne.addAll(ints1);
+                collectionTwo.addAll(ints2);
+
+                collectionOne.retainAll(collectionTwo);
+
+                Collections.sort(collectionOne);
+
+        return collectionOne;
     }
 
     /**
@@ -85,7 +141,30 @@ public class CollectionsAssignment {
         // your counts to find the largest. You'll need a collection that allows
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
-        return "";
+        // ArrayList<String> listOfWords = new ArrayList<String>();
+        // String wordsCollection = Arrays.asList(list);
+
+    //    2. push the results of the frequency array into wordOccurenceCount hashmap of key value pairs.
+    // move this above for scoping
+        HashMap<String, Integer> wordOccurenceCount = new HashMap<String, Integer>();
+
+    // 1. create an array and add list to it.
+        // iterate through the eachUniqueWord array locating all unique words and returning the frequency in which they occured
+        Set<String> eachUniqueWord = new HashSet<>(list);
+        for(String word: eachUniqueWord){
+          
+            wordOccurenceCount.put(word, Collections.frequency(list, word));
+        }
+
+        // 3.iterate through wordOccurenceCount array to find the wordOccurenceCount value that appeared most frequently, return the key
+            int mostUsedWord = (Collections.max(wordOccurenceCount.values()));
+        for(Entry<String, Integer> entry : wordOccurenceCount.entrySet()){
+            if(entry.getValue() == mostUsedWord){
+                return entry.getKey();
+            }
+        }
+        String a = "hello";
+        return a;
     }
 
     public static String getName() {
