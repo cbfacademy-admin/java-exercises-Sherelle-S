@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
@@ -141,21 +142,27 @@ public class CollectionsAssignment {
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
         // ArrayList<String> listOfWords = new ArrayList<String>();
+        // String wordsCollection = Arrays.asList(list);
 
-        // String[] words = (String[]) listOfWords.toArray();
+    //    2. push the results of the frequency array into wordOccurenceCount hashmap of key value pairs.
+    // move this above for scoping
+        HashMap<String, Integer> wordOccurenceCount = new HashMap<String, Integer>();
 
-        // listOfWords.addAll(list);
-        // HashMap<String, Integer> wordsInString = new HashMap<String,Integer>();
+    // 1. create an array and add list to it.
+        // iterate through the eachUniqueWord array locating all unique words and returning the frequency in which they occured
+        Set<String> eachUniqueWord = new HashSet<>(list);
+        for(String word: eachUniqueWord){
+          
+            wordOccurenceCount.put(word, Collections.frequency(list, word));
+        }
 
-        // for(int i = 0; i < listOfWords.size(); i++){
-        //     if(listOfWords.get(i).contains(i))
-        // }
-
-        // for( String i : words){
-        //     if(listOfWords : contains(i)){
-        //         listOfWords.put(i, listOfWords.get(i) + 1)
-        //     }
-        // }
+        // 3.iterate through wordOccurenceCount array to find the wordOccurenceCount value that appeared most frequently, return the key
+            int mostUsedWord = (Collections.max(wordOccurenceCount.values()));
+        for(Entry<String, Integer> entry : wordOccurenceCount.entrySet()){
+            if(entry.getValue() == mostUsedWord){
+                return entry.getKey();
+            }
+        }
         String a = "hello";
         return a;
     }
