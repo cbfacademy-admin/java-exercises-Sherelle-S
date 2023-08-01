@@ -1,17 +1,13 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class CollectionsAssignment {
 
@@ -144,21 +140,21 @@ public class CollectionsAssignment {
         // ArrayList<String> listOfWords = new ArrayList<String>();
         // String wordsCollection = Arrays.asList(list);
 
-    //    2. push the results of the frequency array into wordOccurenceCount hashmap of key value pairs.
-    // move this above for scoping
+                //    2. push the results of the frequency array into wordOccurenceCount hashmap of key value pairs.
+                // move this above for scoping
         HashMap<String, Integer> wordOccurenceCount = new HashMap<String, Integer>();
 
-    // 1. create an array and add list to it.
-        // iterate through the eachUniqueWord array locating all unique words and returning the frequency in which they occured
-        Set<String> eachUniqueWord = new HashSet<>(list);
-        for(String word: eachUniqueWord){
+                // 1. create an array and add list to it.
+                // iterate through the eachUniqueWord array locating all unique words and returning the frequency in which they occured
+                // Set<String> eachUniqueWord = new HashSet<>(list);
+        for(String word: list){
           
             wordOccurenceCount.put(word, Collections.frequency(list, word));
         }
 
-        // 3.iterate through wordOccurenceCount array to find the wordOccurenceCount value that appeared most frequently, return the key
+                // 3.iterate through wordOccurenceCount array to find the wordOccurenceCount value that appeared most frequently, return the key
             int mostUsedWord = (Collections.max(wordOccurenceCount.values()));
-        for(Entry<String, Integer> entry : wordOccurenceCount.entrySet()){
+            for(Entry<String, Integer> entry : wordOccurenceCount.entrySet()){
             if(entry.getValue() == mostUsedWord){
                 return entry.getKey();
             }
