@@ -1,0 +1,22 @@
+// package com.cbfacademy;
+
+// import com.cbfacademy.cars.Cars;
+// import com.cbfacademy.workingOut.Account1;
+// import com.cbfacademy.workingOut.CurrentAccount;
+
+// public class App3 {
+//     public static void main(String[] args) {
+//         System.out.println("Hello World! cars");
+
+//         // Account account = new Account(12, 870521);
+//         // CurrentAccount ca = new CurrentAccount(157, 8701, 1257);
+
+//         //     System.out.println(CurrentAccount.overdraftLimit);
+
+//         // System.out.println(myCar.model);
+
+//         // myCar.getModel();
+//     }
+
+
+// }
