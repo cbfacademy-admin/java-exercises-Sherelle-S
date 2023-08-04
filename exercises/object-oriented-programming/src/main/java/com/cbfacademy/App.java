@@ -18,33 +18,32 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        // Account account = new Account(1500, 875093);
+        Account account = new Account(1500, 875093);
 
-        // System.out.println("Your  account balance is £" + account.getBalance());  
-        // account.depositFunds(120);
-        // account.withdrawFunds(2000);
+        System.out.println("Your  account balance is £" + account.getBalance());  
+        account.depositFunds(120);
+        account.withdrawFunds(2000);
 
-        // CurrentAccount currentAccount = new CurrentAccount(200, 875093, 1000);
-        // System.out.println("Your current account balance is £" +currentAccount.getBalance());
-        // currentAccount.setOverdraftLimit(2000.00);
-        // currentAccount.withdrawFunds(3500);
+        CurrentAccount currentAccount = new CurrentAccount(200, 875093, 1000);
+        System.out.println("Your current account balance is £" +currentAccount.getBalance());
+        currentAccount.setOverdraftLimit(2000.00);
+        currentAccount.withdrawFunds(3500);
         
-        // SavingsAccount savingsAccount = new SavingsAccount(1500, 875093);
-        // System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
-        // savingsAccount.depositFunds(1.25);
+        SavingsAccount savingsAccount = new SavingsAccount(1500, 875093);
+        System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
+        savingsAccount.depositFunds(1.25);
 
-        Rectangle rectangle = new Rectangle("Rectangle", 4, 4);
-        rectangle.area();
-        // rectangle.toStrig();
+        // Rectangle rectangle = new Rectangle("Rectangle", 4, 4);
+        // rectangle.area();
         // System.out.println(rectangle.toString());
-        System.out.println(rectangle.getShapeName());
 
-        Sphere sphere = new Sphere("Sphere", 10);
-        sphere.area();
-        System.out.println("Yolo"+sphere.toString());
+        // Sphere sphere = new Sphere("Sphere", 10);
+        // sphere.area();
+        // System.out.println(sphere.toString());
 
-        Cylinder cylinder = new Cylinder("Cylinder", 10, 5);
-        cylinder.area();        
+        // Cylinder cylinder = new Cylinder("Cylinder", 10, 5);
+        // cylinder.area();  
+        // System.out.println(cylinder.toString());      
         // // Cars myCar = new Cars();
 
         // Cars car = new Cars();

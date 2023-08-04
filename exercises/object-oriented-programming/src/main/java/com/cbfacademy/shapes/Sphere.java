@@ -29,7 +29,6 @@ public class Sphere extends Shape {
         System.out.println("The area of your sphere is " + calculateArea+".");
 
         Double sphereArea = (double) (Math.round(calculateArea*10.0)/10.0);
-
         
         return sphereArea;
     }        
