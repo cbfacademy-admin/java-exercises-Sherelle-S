@@ -24,10 +24,11 @@ public class Paint {
         if(this.shapeName == "rectangle"){
             surface = (2*  (height * width) * 2 * (height * width) * 2 * (height * width));
             System.out.println("The surface area of the "+ this.shapeName +" is" + surface +"you will need" /*gallons of paint */);
-        }else if(this.shapeName.equals("Sphere")){
-            surface = eqtn;
+        }else if(this.shapeName ="Sphere"){
+            surface = 4 * Math.PI * 2;
+            System.out.println("The surface are of the "+this.shapeName +"is " + surface + " you will need " /*gallons of paint */);
         }else{
-            surface = eqtn;
+            surface = (2 * Math.PI * radius * height) * (2 * Math.PI * radius * height);
         }
         // Cylinder surface area A=2πrh+2πr2
         // Sphere surface area A=4πr2
