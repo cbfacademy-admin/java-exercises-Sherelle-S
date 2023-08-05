@@ -20,7 +20,17 @@ public class Paint {
         System.out.println(getShapeName() +"Will use "+Shape+" gallons of paint to cover it.");
     }
 
-    public void painShapes(){
-        
+    public void painShapes(double height, double width, double radius, double surface){
+        if(this.shapeName == "rectangle"){
+            surface = (2*  (height * width) * 2 * (height * width) * 2 * (height * width));
+            System.out.println("The surface area of the "+ this.shapeName +" is" + surface +"you will need" /*gallons of paint */);
+        }else if(this.shapeName.equals("Sphere")){
+            surface = eqtn;
+        }else{
+            surface = eqtn;
+        }
+        // Cylinder surface area A=2πrh+2πr2
+        // Sphere surface area A=4πr2
+        //  Rectangular prismsurface area A=2(wl+hl+hw)
     }
 }
