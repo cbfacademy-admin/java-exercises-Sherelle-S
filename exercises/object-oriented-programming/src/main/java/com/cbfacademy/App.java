@@ -5,6 +5,7 @@ import com.cbfacademy.accounts.Account;
 import com.cbfacademy.accounts.CurrentAccount;
 import com.cbfacademy.accounts.SavingsAccount;
 import com.cbfacademy.shapes.Cylinder;
+import com.cbfacademy.shapes.Paint;
 import com.cbfacademy.shapes.Rectangle;
 import com.cbfacademy.shapes.Shape;
 import com.cbfacademy.shapes.Sphere;
@@ -32,6 +33,12 @@ public class App {
         SavingsAccount savingsAccount = new SavingsAccount(1500, 875093);
         System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
         savingsAccount.depositFunds(1.25);
+
+        Paint paint = new Paint("Rectangle", 100);
+        // paint.amount("rectangle", 35, 20, 0);
+        paint.amount("tank", 30, 0, 10);
+        paint.amount("sphere", 0, 0, 15);
+        
 
         // Rectangle rectangle = new Rectangle("Rectangle", 4, 4);
         // rectangle.area();

@@ -1,37 +1,52 @@
 package com.cbfacademy.shapes;
+import java.lang.Math;
 
-public class Paint {
+public class Paint extends Shape{
     
     private double coverage;
 
-    public void paint(double coverage){
-        this.setCoverage(coverage);
+    public Paint(String shapeName, double coverage){
+        super(shapeName);
+        // this.setCoverage(coverage);
+        this.coverage = coverage;
     }
 
     protected double getCoverage(){
         return coverage;
     }
 
-    public void setCoverage(double coverage){
-        this.coverage = coverage;
-    }
+    // public void setCoverage(double coverage){
+    //     this.coverage = coverage;
+    // }
 
-    public double amount(Shape, shape){
-        System.out.println(getShapeName() +"Will use "+Shape+" gallons of paint to cover it.");
-    }
-
-    public void painShapes(double height, double width, double radius, double surface){
-        if(this.shapeName == "rectangle"){
-            surface = (2*  (height * width) * 2 * (height * width) * 2 * (height * width));
-            System.out.println("The surface area of the "+ this.shapeName +" is" + surface +"you will need" /*gallons of paint */);
-        }else if(this.shapeName ="Sphere"){
-            surface = 4 * Math.PI * 2;
-            System.out.println("The surface are of the "+this.shapeName +"is " + surface + " you will need " /*gallons of paint */);
-        }else{
-            surface = (2 * Math.PI * radius * height) * (2 * Math.PI * radius * height);
+    public void amount(String shape, double height, double width, double radius){
+        double areaToCover;
+        System.out.println(shape);
+        System.out.println(height);
+        System.out.println(radius);
+        System.out.println(width);
+        // double amountOfGallons = 0;
+        // double gallonsOfPaint = areaToCover / coverage;
+        if(shapeName.toLowerCase().equals("rectangle")){
+            areaToCover = (2 *  (height * width));
+            // System.out.println(height);
+            // System.out.println(width);
+            System.out.println("You will need " +(areaToCover / coverage )+ " gallons of paint to cover a "+shape+" with a surface area of " +areaToCover+".");
+        }else if(shapeName.toLowerCase().equals("sphere")){
+            areaToCover = 4 * Math.PI * (radius * radius);
+            System.out.println(radius);
+            System.out.println("You will need " +(areaToCover / coverage )+ " gallons of paint to cover a "+shape+" with a surface area of " +areaToCover+".");
+        }else if(shapeName.toLowerCase().equals("tank")){
+            areaToCover = (2 * Math.PI * radius * height);
+            System.out.println(radius);
+            System.out.println(height);
+            System.out.println("You will need "+(areaToCover / this.coverage) + " gallons of paint to cover a "+shape+" with a surface area of " +areaToCover+".");
         }
-        // Cylinder surface area A=2πrh+2πr2
-        // Sphere surface area A=4πr2
-        //  Rectangular prismsurface area A=2(wl+hl+hw)
+    }
+
+    @Override
+    public double area() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'area'");
     }
 }
