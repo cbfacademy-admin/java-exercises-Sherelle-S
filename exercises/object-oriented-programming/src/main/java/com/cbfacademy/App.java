@@ -1,6 +1,6 @@
 package com.cbfacademy;
 
-// import com.cbfacademy.cars.Cars;
+import com.cbfacademy.cars.Car;
 import com.cbfacademy.accounts.Account;
 import com.cbfacademy.accounts.CurrentAccount;
 import com.cbfacademy.accounts.SavingsAccount;
@@ -19,6 +19,13 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
+        Car car1 = new Car("Volvo","V40",2012);
+        Car car2 = new Car("Porsche","Panamera",2009);
+        Car car3 = new Car("Audi","A3",2018);
+        System.out.println(car1.model + " "+ car1.make +" " + car1.year);
+        System.out.println(car2.model + " "+ car2.make +" " + car2.year);
+        System.out.println(car3.model + " "+ car3.make +" " + car3.year);
+
         Account account = new Account(1500, 875093);
 
         System.out.println("Your  account balance is £" + account.getBalance());  
@@ -34,15 +41,18 @@ public class App {
         System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
         savingsAccount.depositFunds(1.25);
 
-        Paint paint = new Paint("Rectangle", 100);
-        // paint.amount("rectangle", 35, 20, 0);
-        paint.amount("tank", 30, 0, 10);
-        paint.amount("sphere", 0, 0, 15);
-        
+        Paint paint = new Paint(250);
 
-        // Rectangle rectangle = new Rectangle("Rectangle", 4, 4);
-        // rectangle.area();
-        // System.out.println(rectangle.toString());
+        // Rectangle rectangle = new Rectangle(, 0, 0)
+        // paint.amount("rectangle", 35, 20, 0);
+        
+        // paint.amount("sphere", 0, 0, 15);
+        // paint.amount("tank", 30, 0, 10);
+
+        Rectangle rectangle = new Rectangle("Rectangle", 35, 20);
+        rectangle.area();
+        System.out.println(rectangle.toString());
+        paint.amount("reactangle", 0, 0, 0);
 
         // Sphere sphere = new Sphere("Sphere", 10);
         // sphere.area();

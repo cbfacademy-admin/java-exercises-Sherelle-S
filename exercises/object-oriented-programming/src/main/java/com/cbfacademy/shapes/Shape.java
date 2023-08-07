@@ -7,14 +7,7 @@ public abstract class Shape {
         this.shapeName = shapeName;                  ; 
     };
 
-        // public String getShapeName(){
-        //     return shapeName;
-        // }
-
-        // public void shapeName(String newShape){
-        //     this.shapeName = newShape;
-        // }
-
+       
     public abstract double area();
 
     public String toString(){
