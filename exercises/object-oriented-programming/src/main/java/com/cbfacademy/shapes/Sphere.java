@@ -10,6 +10,7 @@ public class Sphere extends Shape {
         this.setRadius(radius);
     }
 
+    // getters and setters were used for part one of the exercise when the radius was able to be changed on the public interface on my main App.js. as per part 2 of the exercise
         protected double getRadius(){
             return radius;
         }

@@ -1,5 +1,4 @@
 package com.cbfacademy.shapes;
-import java.lang.Math;
 import java.text.DecimalFormat;
 
 public class Paint{
@@ -11,7 +10,11 @@ public class Paint{
     }
 
     public double amount(Shape shape){
-        System.out.println("You will need " +shape.area()/coverage+ " gallons of paint to cover a "+shape+" with a surface area of " +shape.area()+".");
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String roundGallons = decimalFormat.format(shape.area()/coverage);
+        String roundArea = decimalFormat.format(shape.area());
+
+        System.out.println("You will need " +roundGallons+ " gallons of paint to cover a "+shape+" with a rounded surface area of " +roundArea+".");
         return shape.area()/coverage;
     }
 

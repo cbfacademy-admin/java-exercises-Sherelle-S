@@ -40,32 +40,6 @@ public class App {
         SavingsAccount savingsAccount = new SavingsAccount(1500, 875093);
         System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
         savingsAccount.depositFunds(1.25);
-
-        // Paint paint = new Paint(250);
-
-        // Rectangle rectangle = new Rectangle(, 0, 0)
-        // paint.amount("rectangle", 35, 20, 0);
-        
-        // paint.amount("sphere", 0, 0, 15);
-        // paint.amount("tank", 30, 0, 10);
-
-        // Rectangle rectangle = new Rectangle("Rectangle", 35, 20);
-        // rectangle.area();
-        // // paint.amount("reactangle", 0, 0, 0);
-
-        // Sphere sphere = new Sphere("Sphere", 10);
-        // sphere.area();
-        // // System.out.println(sphere.toString());
-
-        // Cylinder cylinder = new Cylinder("Cylinder", 10, 5);
-        // cylinder.area();  
-        // System.out.println(cylinder.toString());      
-        // // Cars myCar = new Cars();
-
-        // Cars car = new Cars();
-        // // System.out.println(myCar.model);
-        // System.out.println(car.toString());
-        // car.getDetals();
-        // // myCar.getModel();
+       
     }
 }
