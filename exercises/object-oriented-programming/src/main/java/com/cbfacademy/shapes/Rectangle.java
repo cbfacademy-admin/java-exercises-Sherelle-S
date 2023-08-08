@@ -10,14 +10,15 @@ public class Rectangle extends Shape{
         this.length = length; 
         this.width = width;
     }
+    // getters and setters were used for part one of the exercise when the radius was able to be changed on the public interface on my main App.js. which then got removed.
 
-    public double getLength(){
-        return length;
-    }
+    // public double getLength(){
+    //     return length;
+    // }
 
-    public double getWidth(){
-        return width;
-    }
+    // public double getWidth(){
+    //     return width;
+    // }
 
     @Override
     public double area(){

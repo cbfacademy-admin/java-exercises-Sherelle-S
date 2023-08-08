@@ -9,29 +9,22 @@ public class Cylinder extends Shape {
 
     public Cylinder(String shapeName, double height, double radius){
         super(shapeName);
-        this.setHeight(height);
-        this.setRadius(radius);
+        this.height = height;
+        this.radius = radius;
     }
 
-        protected double getHeight(){
-            return height;
-        }
+        // getters and setters were used for part one of the exercise when the radius was able to be changed on the public interface on my main App.js. which then got removed.
+        // protected double getHeight(){
+        //     return height;
+        // }
 
-        protected double getRadius(){
-            return radius;
-        }
-
-        public double setHeight( double height){
-            return this.height = height;
-        }
-
-        public double setRadius(double radius){
-            return this.radius = radius;
-        }
+        // protected double getRadius(){
+        //     return radius;
+        // }
 
         @Override
         public double area(){
-            double cylinderArea = 2 * Math.PI * radius * height;
+            double cylinderArea = 2 * Math.PI * this.radius * this.height;
             // System.out.println("The area of the "+ shapeName+ " is "+ cylinderArea +".");
             return cylinderArea;
             

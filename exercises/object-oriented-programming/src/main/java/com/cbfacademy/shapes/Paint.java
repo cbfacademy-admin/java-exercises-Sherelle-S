@@ -11,11 +11,11 @@ public class Paint{
 
     public double amount(Shape shape){
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String roundGallons = decimalFormat.format(shape.area()/coverage);
+        String roundGallons = decimalFormat.format(shape.area()/this.coverage);
         String roundArea = decimalFormat.format(shape.area());
 
         System.out.println("You will need " +roundGallons+ " gallons of paint to cover a "+shape+" with a rounded surface area of " +roundArea+".");
-        return shape.area()/coverage;
+        return shape.area()/this.coverage;
     }
 
 }

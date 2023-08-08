@@ -4,6 +4,7 @@ public class PaintShapes {
     public static void main(String[] args) {
 
         Paint paint = new Paint(200);
+        
         Rectangle rectangle = new Rectangle("Rectangle", 35, 20);
         System.out.println("The area of the rectangle is "+rectangle.area());
         paint.amount(rectangle);

@@ -24,13 +24,20 @@ public class CurrentAccount extends Account {
 
         double overdrawn = 0;
 
-        if(withdraw > 0 && withdraw <= balance){
+        if(withdraw < 0){
+            System.out.println("Invalid transaction");
+        }
+        
+        
+        if(withdraw <= balance){
             
                 balance -= withdraw;
                 System.out.println("£"+withdraw + " have been withdrawn from this account. £" +balance+ " is remaining.");
         
+        }else if(balance + overdraftLimit >= withdraw){
+            /*use this over the one below for readablilty 
         }else if(balance - withdraw < 0 && balance - withdraw >= -overdraftLimit){
-
+*/
             balance -= withdraw;
             System.out.println("Your new balance is £"+ balance);
                 if(balance < 0){
