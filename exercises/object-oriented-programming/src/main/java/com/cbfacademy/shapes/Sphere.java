@@ -7,17 +7,17 @@ public class Sphere extends Shape {
 
     public Sphere(String shapeName, double radius) {
         super(shapeName);
-        this.setRadius(radius);
+        this.radius = radius;
     }
 
-    // getters and setters were used for part one of the exercise when the radius was able to be changed on the public interface on my main App.js. as per part 2 of the exercise
+    // getters and setters were used for part one of the exercise when the radius was able to be changed on the public interface on my main App.js. which then
         protected double getRadius(){
             return radius;
         }
 
-        public double setRadius(double radius){
-            return this.radius = radius;
-        }
+        // public double setRadius(double radius){
+        //     return this.radius = radius;
+        // }
        
     @Override
     public double area(){
