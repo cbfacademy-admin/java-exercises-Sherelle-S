@@ -41,7 +41,7 @@ public class App {
         System.out.println("Your savings account balance is £"+ savingsAccount.getBalance()+".");
         savingsAccount.depositFunds(1.25);
 
-        Paint paint = new Paint(250);
+        // Paint paint = new Paint(250);
 
         // Rectangle rectangle = new Rectangle(, 0, 0)
         // paint.amount("rectangle", 35, 20, 0);
@@ -49,14 +49,13 @@ public class App {
         // paint.amount("sphere", 0, 0, 15);
         // paint.amount("tank", 30, 0, 10);
 
-        Rectangle rectangle = new Rectangle("Rectangle", 35, 20);
-        rectangle.area();
-        System.out.println(rectangle.toString());
-        paint.amount("reactangle", 0, 0, 0);
+        // Rectangle rectangle = new Rectangle("Rectangle", 35, 20);
+        // rectangle.area();
+        // // paint.amount("reactangle", 0, 0, 0);
 
         // Sphere sphere = new Sphere("Sphere", 10);
         // sphere.area();
-        // System.out.println(sphere.toString());
+        // // System.out.println(sphere.toString());
 
         // Cylinder cylinder = new Cylinder("Cylinder", 10, 5);
         // cylinder.area();  

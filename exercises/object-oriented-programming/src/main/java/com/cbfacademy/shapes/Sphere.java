@@ -17,18 +17,13 @@ public class Sphere extends Shape {
         public double setRadius(double radius){
             return this.radius = radius;
         }
-
-    // @Override    
-    // public String shapeName(){
-    //     this.shapeName = "Sphere";
-    // }
-        
+       
     @Override
     public double area(){
         double calculateArea = 4 * Math.PI * (getRadius() * getRadius());
-        System.out.println("The area of your sphere is " + calculateArea+".");
+        // System.out.println("The area of your "+shapeName+" is " + calculateArea+".");
 
-        Double sphereArea = (double) (Math.round(calculateArea*10.0)/10.0);
+        Double sphereArea = (double) (Math.round(calculateArea*10.0)/10.0); 
         
         return sphereArea;
     }        

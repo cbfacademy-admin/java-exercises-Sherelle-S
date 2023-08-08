@@ -30,7 +30,7 @@ public class Cylinder extends Shape {
         @Override
         public double area(){
             double cylinderArea = 2 * Math.PI * radius * height;
-            System.out.println("The area of the "+ getShapeName()+ " is "+ cylinderArea +".");
+            // System.out.println("The area of the "+ shapeName+ " is "+ cylinderArea +".");
             return cylinderArea;
             
         }

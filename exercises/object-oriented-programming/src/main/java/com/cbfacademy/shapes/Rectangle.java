@@ -16,7 +16,7 @@ public class Rectangle extends Shape{
     }
 
 
-    
+
     public double getWidth(){
         return width;
     }
@@ -32,7 +32,7 @@ public class Rectangle extends Shape{
     @Override
     public double area(){
         double rectangleArea = this.length * this.width;
-        System.out.println("The area of the rectangle is " + rectangleArea+".");
+        // System.out.println("The area of the "+shapeName+" is " + rectangleArea+".");
         return rectangleArea;
     }
     
