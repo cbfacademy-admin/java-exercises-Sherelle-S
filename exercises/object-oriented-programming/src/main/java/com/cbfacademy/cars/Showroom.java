@@ -1,5 +1,6 @@
 package com.cbfacademy.cars;
 
+
     public class Showroom {
         public static void main(String[] args) {
             System.out.println("Hello World!");
@@ -10,7 +11,13 @@ package com.cbfacademy.cars;
         System.out.println(car2.model + " "+ car2.make +" " + car2.year);
         System.out.println(car3.model + " "+ car3.make +" " + car3.year);
 
-        System.out.println(car1.toString());
-        car2.getDetals();
-        }
+     String make; 
+     String model; 
+     int year;
+
+    public Showroom(String make, String model, int year){
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
 }
