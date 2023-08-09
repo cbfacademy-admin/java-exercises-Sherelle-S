@@ -1,10 +1,10 @@
 package com.cbfacademy.cars;
 
 public class Car {
-    public String make;
-    public String model;
-    public int year;
-    
+    public String make = "Volvo";
+    public String model = "V40";
+    public int year = 2012;
+   
 
     public Car(String make, String model, int year){
         this.make = make;
@@ -34,5 +34,4 @@ public class Car {
         getModel();
         getYear();
     }
-
 }
