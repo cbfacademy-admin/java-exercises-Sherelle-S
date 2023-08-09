@@ -11,27 +11,29 @@ public class Car {
         this.model = model;
         this.year = year;
     }
-
-    public String toString(){
-        String newCar = make + "\n"+model + "\n" + year;
-        return newCar;
-    }
+    
 
     public void getMake(){
-        System.out.println("Have you seen my nice new " +this.make +"?");
+        return;
     }
 
     public void getModel(){
-        System.out.println("It's a " +this.model+ " You know");
+    return;
     }
 
     public void getYear(){
-        System.out.println("It was released in " + this.year + ".");
+    return;
     }
 
     public void getDetals(){
-        getMake();
-        getModel();
-        getYear();
+        System.out.print("Have you seen my nice new " +this.make+"? ");
+        System.out.print("It's a " +this.model+ " You know ");
+        System.out.print("It was released in " + this.year + ". ");
+    }
+
+    @Override
+    public String toString(){
+        String newCar = make + "\n"+model + "\n" + year;
+        return newCar;
     }
 }

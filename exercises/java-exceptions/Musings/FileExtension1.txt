@@ -1,0 +1,24 @@
+package com.cbfacademy;
+
+public class FileExtension1 {
+    
+    public int check(String FileExtension) throws InvalidExtensionException{
+// this is just the public interface
+// ,ove the below to ThrowsException
+
+        if(FileExtension.contains("null") || FileExtension.isEmpty()){
+            throw new InvalidExtensionException("Illegal extension name");
+        }else if(FileExtension.contains(".java")){
+            return 1;
+        }else{
+            return 0;
+        }
+            
+    }
+    //    public boolean FileExtension.contains(CharSequence ".java"); //get this to return 1
+        // if file extension is .java return 1
+        // if file extension is not java return 0
+        // throw a custom exception when name is  or an empty string 
+
+}
+

@@ -35,13 +35,11 @@ public class Account {
             System.out.println("Your new balance is now £" + this.balance +".");
                     
 
-        // do the math so you only take as much as a 0 balance
             }else{
                 balance -= withdraw;
                 System.out.println("£ "+withdraw +" have been withdrawn from this account. The new balance is now " + this.balance +".");
 
             }
     }
-    
 
-    }
+}
