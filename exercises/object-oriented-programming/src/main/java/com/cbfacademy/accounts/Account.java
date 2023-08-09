@@ -1,7 +1,7 @@
 package com.cbfacademy.accounts;
 
 public class Account {
-    private double balance;
+    protected double balance;
     private int accountNumber;
 
     public Account(double balance, int accountNumber){
@@ -45,6 +45,3 @@ public class Account {
     
 
     }
-
-
-

@@ -9,7 +9,6 @@ public class CurrentAccount extends Account {
         this.setOverdraftLimit(overdraftLimit);
     }
 
-    
     public double getOverdraftLimit(){
         return overdraftLimit;
     }
@@ -24,18 +23,25 @@ public class CurrentAccount extends Account {
 
         double overdrawn = 0;
 
-        if(withdraw > 0 && withdraw <= getBalance()){
+       if(withdraw <= 0){
+        System.out.println("Invalid Transaction");
+        withdraw = 0;
+       }
+           
+        if(withdraw <= this.balance){
             
-                setBalance(getBalance() - withdraw);
-                System.out.println("£"+withdraw + " have been withdrawn from this account. £" +getBalance()+ " is remaining.");
+                this.balance -= withdraw;
+                System.out.println("£"+withdraw + " have been withdrawn from this account. £" +this.balance+ " is remaining.");
         
-        }else if(getBalance() - withdraw < 0 && getBalance() - withdraw >= -overdraftLimit){
+        }else if(this.balance + overdraftLimit >= withdraw){
+            /*use this over the one below for readablilty 
+        }else if(balance - withdraw < 0 && balance - withdraw >= -overdraftLimit){
+*/
+            this.balance -= withdraw;
+            System.out.println("Your new balance is £"+ this.balance);
+                if(this.balance < 0){
 
-            setBalance(getBalance() - withdraw);
-            System.out.println("Your new balance is £"+ getBalance());
-                if(getBalance() < 0){
-
-                    overdrawn += getBalance();
+                    overdrawn += this.balance;
                     System.out.println("You are overdrawn by £" +overdrawn);
 
                 }else{
@@ -45,7 +51,7 @@ public class CurrentAccount extends Account {
 
                 }         
 
-        // }else if(getBalance() - withdraw >= -overdraftLimit ){   
+        // }else if(balance - withdraw >= -overdraftLimit ){   
             
         }else{
                 limitReached();
