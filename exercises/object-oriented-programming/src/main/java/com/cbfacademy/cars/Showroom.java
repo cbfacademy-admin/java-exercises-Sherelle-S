@@ -14,5 +14,5 @@ package com.cbfacademy.cars;
         System.out.println(car1.toString());
         car2.getDetals();
         }
-    
+        
 }
