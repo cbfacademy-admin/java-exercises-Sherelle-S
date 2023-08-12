@@ -13,22 +13,20 @@ public class Car {
     }
     
 
-    public void getMake(){
-        return;
+    public String getMake(){
+        return this.make;
     }
 
-    public void getModel(){
-    return;
+    public String getModel(){
+    return this.model;
     }
 
-    public void getYear(){
-    return;
+    public int getYear(){
+    return this.year;
     }
 
-    public void getDetals(){
-        System.out.print("Have you seen my nice new " +this.make+"? ");
-        System.out.print("It's a " +this.model+ " You know ");
-        System.out.print("It was released in " + this.year + ". \n");
+    public String getDetals(){
+        return "Have you seen my nice new " +this.make+"? It's a " +this.model+ " You know. It was released in " + this.year + ". \n";
     }
 
     @Override
