@@ -1,9 +1,9 @@
 package com.cbfacademy.cars;
 
 public class Car {
-    public String make = "Volvo";
-    public String model = "V40";
-    public int year = 2012;
+    public String make;
+    public String model;
+    public int year;
    
 
     public Car(String make, String model, int year){
@@ -28,7 +28,7 @@ public class Car {
     public void getDetals(){
         System.out.print("Have you seen my nice new " +this.make+"? ");
         System.out.print("It's a " +this.model+ " You know ");
-        System.out.print("It was released in " + this.year + ". ");
+        System.out.print("It was released in " + this.year + ". \n");
     }
 
     @Override
