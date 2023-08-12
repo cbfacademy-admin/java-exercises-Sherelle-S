@@ -1,0 +1,42 @@
+
+// import com.cbfacademy.accounts.Account;
+
+// public class CurrentAccount extends Account {
+
+//     // private double overdraftLimit;
+//     // public double overdrawn = 0;
+
+//     // public CurrentAccount(double balance, int accountNumber, double overdraftLimit, double overdrawn){
+//     //     super(balance, accountNumber);
+//     //     this.overdraftLimit = overdraftLimit;
+//     //     this.setOverdrawn(overdrawn);
+//     // }
+
+//     // public void setOverdrawn(double overdrawn){
+//     // this.overdrawn = overdrawn;    }
+
+//     // public double getOvrdrawn(){
+//     //     return overdrawn;
+//     // }
+
+//     // // @Override  
+//     // //     public void withdrawFunds(double withdraw){
+//     // //         if(withdraw > 0 && withdraw <= getBalance()){
+//     // //             if(getBalance() - withdraw < 0 && getBalance() - withdraw >= -overdraftLimit){
+//     // //             setBalance(getBalance() - withdraw);
+//     // //             System.out.println("£"+withdraw + " have been withdrawn from this account. " +getBalance()+ "is remaining.");
+//     // //             }else if(getBalance() - withdraw > 0 && getOvrdrawn() >= -overdraftLimit){
+//     // //                 setBalance(getBalance() - withdraw);
+//     // //                 // return so that negative number is now added to overdraft
+//     // //                 setOverdrawn(SOMETHING);
+//     // //                 System.out.println("Your account it overdrawn by £" +overdrawn);
+//     // //             }else if(withdraw >= -overdraftLimit){
+//     // //                 setOverdrawn(getBalance() - -overdraftLimit);
+//     // //                 setBalance(-overdraftLimit);
+//     // //             }
+//     // //         }else{
+//     // //             System.out.println("Insufficient funds available for this transaction.");
+//     // //         }
+        
+//     // //    }
+// }

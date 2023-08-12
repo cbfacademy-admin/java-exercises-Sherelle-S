@@ -1,0 +1,11 @@
+// Account account = new Account(340, 0);
+
+        // System.out.println(account.getBalance());
+        
+        CurrentAccount currentAC = new CurrentAccount(1000, 29571, 240, 0);
+        
+        double currentBalance = currentAC.getBalance();
+        System.out.println("current balance is £" + currentBalance);
+        currentAC.setBalance(1500);
+        System.out.println("The new balance is £" +currentAC.getBalance());
+            

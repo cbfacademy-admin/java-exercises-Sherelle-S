@@ -1,0 +1,55 @@
+package com.cbfacademy.workingOut;
+
+public class Account1 {
+   private double balance;
+   private int accountNumber;
+
+   public Account1(double balance, int accountNumber){
+    this.setBalance(balance);
+    this.setAccountNumber(accountNumber);
+   }
+
+   public double getBalance(){
+    return balance;
+   }
+
+   protected int getAccountNumber(){
+    return accountNumber;
+   }
+
+   public void setBalance(double newBalance){
+    this.balance = newBalance;
+   }
+
+   protected void setAccountNumber(int accountNumber){
+    this.accountNumber = accountNumber;
+   }
+   
+   public void depositFunds(int deposit){
+        if(deposit < 0){
+            setBalance(balance += 0);
+        }else{
+        setBalance(balance += deposit);
+        } 
+        System.out.println("Funds have been deposited to "+ this.getAccountNumber() +". The balance is now " + this.getBalance() +".");
+    }
+
+
+
+   public void withdrawFunds(int withdraw){
+    
+    if(withdraw > balance){
+        System.out.println("Insuffiecient funds available. you can currently withdraw " + balance +"." );
+        balance -= balance; 
+        // do the math so you only take as much as a 0 balance
+    }else{
+        balance -= withdraw;
+    }
+        System.out.println(withdraw +"Funds have been withdrawn from this account. The new balance is now " + this.balance +".");
+    }
+ 
+}
+
+
+
+
