@@ -25,8 +25,8 @@ public class Car {
     return this.year;
     }
 
-    public String getDetals(){
-        return "Have you seen my nice new " +this.make+"? It's a " +this.model+ " You know. It was released in " + this.year + ". \n";
+    public String getDetails(){
+        return "Have you seen my nice new " +this.make+"? It's a " +this.model+ " You know. It was released in " + this.year + ".";
     }
 
     @Override
