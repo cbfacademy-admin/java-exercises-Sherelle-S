@@ -32,14 +32,15 @@ public class ReadInvertedFile {
         });
     }
 
-    public static void OutputStream(String data){
-        OutputStream os = null;
-        try{
-            os = new FileOutputStream(new File("src/main/resources/exercise3.txt"));
-            os.write(data.getBytes(), 0 data.length());
-        }catch(IOException e){
-            e.printStackTrace();
-            System.out.println("Could not write to file");
-        }
-    }
+    // public static void OutputStream(String data){
+    //     OutputStream os = null;
+    //     try{
+    //         os = new FileOutputStream(new File("src/main/resources/exercise3.txt"));
+    //         os.write(data.getBytes(), 0 data.length());
+    //     }catch(IOException e){
+    //         e.printStackTrace();
+    //         System.out.println("Could not write to file");
+    //     }
+    // }
+    
 }

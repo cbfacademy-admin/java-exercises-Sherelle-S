@@ -1,6 +1,8 @@
 package com.cbfacademy;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -44,9 +46,15 @@ public class App {
 
        Path fileName = Path.of("src/main/resources/exercise3.txt");
 
-       Files.writeString(fileName, stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
-
-       
+    //    Files.writeString(fileName, text)
+    // String content = stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println);
+    
+    try(FileOutputStream outputStream = new FileOutputStream(filePath.toFile());
+    DataOutputStream dataOutStream = new DataOutputStream(new BufferedOutputStream(outputStream));){
+        dataOutStream.writeUTF(stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
+        dataOutStream.writeInt(10);
+        dataOutStream.writeLong(100l);
+    }
            
        
     }
