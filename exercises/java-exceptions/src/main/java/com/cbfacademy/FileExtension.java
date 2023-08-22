@@ -1,20 +1,36 @@
 package com.cbfacademy;
+// import com.codingblackfemales.academy.exception.App;
+
+com.codingblackfemales.academy.exception.InvalidExtensionException;
+
+// reates a method called check that checks the extension of the extensionNamesay and returns the appropraite answer.
 
 public class FileExtension {
-    
-    public int check(String FileExtension){
 
-        if(FileExtension.contains(".java")){
-            return 1;
-        }else if(!FileExtension.contains(".java")){
-            return 0;
-        }else{
-            
-        }
-    //    public boolean FileExtension.contains(CharSequence ".java"); //get this to return 1
-        // if file extension is .java return 1
-        // if file extension is not java return 0
-        // throw a custom exception when name is  or an empty string 
+    public int check(){
+        
+        if( extensionNames == "null") || extensionNames.isEmpty()){
+                throw new InvalidExtensionException("Illegal extension name");
+            }
 
+        if(extensionNames.endsWith(".java")){
+                return 1;
+            }else{
+                return 0;
+            }
+        
     }
+   
+    // public int check(){
+    //     for(int i = 0; i < extensionNames.length(); i++){
+    //         if(extensionNames.contains("null") || extensionNames.isEmpty()){
+    //             throw new InvalidExtensionException("Illegal extension name");
+    //         }else if(extensionNames.contains(".java")){
+    //             return 1;
+    //         }else{
+    //             return 0;
+    //         }
+    //     }
+    // }
+    
 }

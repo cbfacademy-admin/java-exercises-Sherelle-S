@@ -1,12 +1,13 @@
 1. Doesnt neccess need a catch block if there is a finally block.
 
 2. This is a checked and unchecked exception.
-I you only want to catch an unchecked exception a runtime exception you would change runtime exception.
+I you only want to catch an unchecked exception a runtime exception you would change 'runtime exception'.
 Using very broad exceptions as it can make it harder to handle specific issues. It's best to handle all exceptions specifically.
 
 3. This will not compile as it will be a compilation error.
+The broader exception will kill the Aerithmatic exceptions ability to run and break the code.
 
-4. -a unchecked exception - null pointer exception.
+4. -It will compile but throw an unchecked exception - null pointer exception.
 
    -an error as it is running on the client machine not yours. It is not an error we can handle as it comes from the target machine.
 
