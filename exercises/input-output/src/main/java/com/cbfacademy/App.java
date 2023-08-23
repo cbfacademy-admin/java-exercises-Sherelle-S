@@ -10,15 +10,26 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import com.cbfacademy.ReadAFile;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         // Read the file
         String filePath = "src/main/resources/exercise.txt";
-        WriteFile writeFile = new WriteFile();
+       
 
-        filePath.writeFile();
+        
+        try {
+            ReadAFile readAFile = new ReadAFile();
+            readAFile.readingFile(filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error in Reading file");
+        }
+        // WriteFile writeFile = new WriteFile();
+
+        // filePath.writeFile();
         
         
            

@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
-public class WriteFile {
+public class WritingFile {
 
-     public void writeFile(){
+     public void writingFile(){
             String fileName = "exercise2.txt";
 
         try(
@@ -15,7 +15,7 @@ public class WriteFile {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
             PrintWriter writer = new PrintWriter(outputStreamWriter);
         ){
-            writer.print(ReadFile.bufferedReader);//get access to this buffered reader currently outside of your scope.
+            writer.print(ReadAFile.bufferedReader);//get access to this buffered reader currently outside of your scope.
             writer.close();
             outputStreamWriter.close();
         }catch (IOException e){
