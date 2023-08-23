@@ -35,21 +35,36 @@ public class App {
         // System.out.println(data);
         ReadInvertedFile invertFile = new ReadInvertedFile();
 
+        // List huh = invertFile.readFileInList(filePath);
+
+        // Iterator<String> itr = huh.iterator();
+        // while(itr.hasNext())
+        // System.out.println(itr.next());
+try {
     
-        try {
-            Stream<String> invertedStream = invertFile.readFileInList(filePath).stream().collect(ReadInvertedFile.reverseStream());
 
-            // Use try-with-resources to handle the file writing
-            try (PrintWriter writer = new PrintWriter(outputPath)) {
-                invertedStream.forEach(writer::println);
-            }
+       Stream<String> stream = invertFile.readFileInList(filePath).parallelStream();
 
+        stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println);
+
+       Path fileName = Path.of(outputPath);
+
+    //    Files.writeString(fileName, text)
+    // String content = stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println);
+    
+    // try(FileOutputStream outputStream = new FileOutputStream(filePath.toFile());
+    // DataOutputStream dataOutStream = new DataOutputStream(new BufferedOutputStream(outputStream));){
+    //     dataOutStream.writeUTF(stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
+    //     dataOutStream.writeInt(10);
+    //     dataOutStream.writeLong(100l);
+    // }
+    Files.write(outputPath, stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
             System.out.println("Content inverted and written to 'inverted.txt' successfully.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error occurred while processing the file.");
-        }
-
+           
+            } catch (Exception e) {
+    // TODO: handle exception
+}
+       
     }
 
 }
