@@ -9,29 +9,25 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 
 public class ReadAFile {
-    public static final char[] bufferedReader = null;
+    // public static final char[] bufferedReader = null;
     public void readingFile(String inputPath) throws IOException{
-            //  try(
-            //     //  FileInputStream file = new FileInputStream(filePath);
-            //     //  InputStreamReader streamReader = new InputStreamReader(file);
-            //      BufferedReader bufferedReader = new BufferedReader(streamReader);
-            //      LineNumberReader lineReader = new LineNumberReader(bufferedReader);
-            // ){
-            //     String outputLine = lineReader.readLine();
-            //     while(outputLine != null){
-            //         System.out.printf("%d: %s%n", lineReader.getLineNumber(), outputLine);
-            //         outputLine = lineReader.readLine();
-            //     }
-            try {
-                FileReader reader = new FileReader(inputPath);
-                LineNumberReader lineReader = new LineNumberReader(reader);
+        // sets up the functions and passes the input filepath directly into it with the ability to throw and exception.
 
-                int i;
+            try {
+                // open try-catch block
+                FileReader reader = new FileReader(inputPath);
+                // creating new instance of fileReader
+                LineNumberReader lineReader = new LineNumberReader(reader);
+                // new instance of line number whic counts the lines of a file being read
+
                 String outputLine = lineReader.readLine();
+                // creates a variable 'outputLine' and assigns lineReader.readLine() to it.
+
                 
                         while(outputLine != null){
-                            
+                            // checks if there is and output line. while output line is not null
                     System.out.printf("%d: %s%n", lineReader.getLineNumber(), outputLine);
+                    // print this formatted string.
                     outputLine = lineReader.readLine();
                 }
                
