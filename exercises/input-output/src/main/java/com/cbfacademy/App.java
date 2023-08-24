@@ -1,39 +1,37 @@
 package com.cbfacademy;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Iterator;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // System.out.println("Hello World!");
         // Read the file
         String filePath = "src/main/resources/exercise.txt";
-        String outputPath = "src/main/resources/inverted.txt";
-        // WriteFile writeFile = new WriteFile();
+        String outputPath = "src/main/resources/writingExercise.txt";
 
-        // // filePath.writeFile();
-        // InvertedFile invertedFile = new InvertedFile();
-
-        // // String data = readFileAsString("src/main/resources/exercise.txt");
-        // String data = invertedFile.readFileAsString(filePath);
-
-        // System.out.println(data);
-        ReadInvertedFile invertFile = new ReadInvertedFile();
+        
+        try {
+            // opens try catch block which can run now thing swill throw error
+            ReadAFile readAFile = new ReadAFile();
+            // new readAFile instance
+            readAFile.readingFile(filePath);
+            // running readingFile method on readAFile instance passing the filePath into it.
+            WritingFile writeFile = new WritingFile();
+            // new writeFile class
+            writeFile.readAndWriteFile(filePath);
+           
+            // new instan
+        } catch (IOException e) {
+            // throws an IOexception
+            e.printStackTrace();
+            // prints a trace if exception is triggered
+            System.out.println("Error in Reading");
+            // error message
+        }     
+    // }close try-catch block
+      ReadInvertedFile invertFile = new ReadInvertedFile();
 
     
         try {
@@ -49,11 +47,10 @@ public class App {
             e.printStackTrace();
             System.out.println("Error occurred while processing the file.");
         }
-
     }
-
+    // closes main method
 }
+// closes app class
 
     
 
-// put a buffered reader arounf the stream reader to get access to the
