@@ -1,6 +1,7 @@
 package com.cbfacademy;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 // import com.codingblackfemales.academy.exception.FileExtension;
 // import com.codingblackfemales.academy.exception.CustomException;
 // import com.codingblackfemales.academy.exception.ThrowsException;
@@ -23,7 +24,18 @@ public class App
 
         // String extensionNames[]
         //         = new String[] {"App.java", "App.txt", null, "App.md"};
-            List<String> extensionNames = Arrays.asList("App.java", "App.txt", null, "App.md");
+        ArrayList<String> extensionNames = new ArrayList<>(Arrays.asList("App.java", "App.txt", null, "App.md"));
+
+        // try(FileExtension fileExtension = new FileExtension()){
+            try{
+            FileExtension fileExtension = new FileExtension();
+            fileExtension.check(extensionNames);
+
+
+        }catch{
+
+        }
+           
                 // for(int i = 0; i < extensionNames.length;i++){
                 //     System.out.println(extensionNames[i]);
                 // }

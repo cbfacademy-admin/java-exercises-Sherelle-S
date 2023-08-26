@@ -6,10 +6,11 @@ com.codingblackfemales.academy.exception.InvalidExtensionException;
 // reates a method called check that checks the extension of the extensionNamesay and returns the appropraite answer.
 
 public class FileExtension {
+    
 
     public int check(){
         
-        if( extensionNames == "null") || extensionNames.isEmpty()){
+        if( extensionNames == "null" || extensionNames.isEmpty()){
                 throw new InvalidExtensionException("Illegal extension name");
             }
 
