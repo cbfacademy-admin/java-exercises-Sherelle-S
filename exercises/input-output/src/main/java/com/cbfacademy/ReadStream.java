@@ -12,7 +12,6 @@ public class ReadStream {
     // public static void main(String[] args) throws IOException{
 
         public void readStream (String inputPath) throws IOException{
-            String outputPath = "src/main/resources/writingExercise.txt";  
 
             // declaring method witht the string perameter of inputPath, it throws an input output exception if neccessary
             try (

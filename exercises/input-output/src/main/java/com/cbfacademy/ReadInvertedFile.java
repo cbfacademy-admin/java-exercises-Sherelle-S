@@ -1,23 +1,19 @@
 package com.cbfacademy;
 
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class ReadInvertedFile {
     // // create a programme to invert the exercise.txt file
-    public void ReadInvertedFile (String fileName, String outputPath) throws IOException{
+    public void TextInverter (String fileName, String inverterdPath) throws IOException{
         // creating a method that passes in the input and output path of files to written and read drom main. throws IO Exception if unable to complete
         try {
             // openein try catch block
@@ -31,8 +27,8 @@ public class ReadInvertedFile {
             // uses collections to reverse the textLines String
         List<String> reversedLines = textLine.stream().collect(Collectors.toList());
             // Creates a new string called reversedLines where textLines are turned into a stream and the terminal process of collect is used. the collectors are turned into a list
-       Files.write(Paths.get(outputPath), reversedLines);
-    //    using files to gather all associated files, and write them to the outputPath parameter. reversedLines list is what is being written.
+       Files.write(Paths.get(inverterdPath), reversedLines);
+    //    using files to gather all associated files, and write them to the inverterdPath parameter. reversedLines list is what is being written.
         System.out.println(reversedLines);
         // checking that reversed lines actually revesed the lines of the file
         } catch (FileNotFoundException e){
@@ -41,7 +37,7 @@ public class ReadInvertedFile {
             // prints the location exception occures
         }catch(FileAlreadyExistsException e){
             // file already exists exception
-            System.out.println(outputPath + " name already exists, please select another name");
+            System.out.println(inverterdPath + " name already exists, please select another name");
             // asks user for new output path name
         } catch (IOException e) {
             // catches io exception

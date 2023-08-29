@@ -31,35 +31,7 @@ public class App {
         //     // error message
         // }     
     // }close try-catch block
-      ReadInvertedFile invertFile = new ReadInvertedFile();
-
-      invertFile.ReadInvertedFile(filePath, outputPath);
-
-    
-        // try {
-        //     Stream<String> invertedStream = invertFile.readFileInList(filePath).stream().collect(ReadInvertedFile.reverseStream());
-
-        //     // Use try-with-resources to handle the file writing
-        //     try (PrintWriter writer = new PrintWriter(outputPath)) {
-        //         invertedStream.forEach(writer::println);
-        //     }
-
-        //     System.out.println("Content inverted and written to 'inverted.txt' successfully.");
-        // } catch (Exception e) {
-        //     e.printStackTrace();
-        //     System.out.println("Error occurred while processing the file.");
-        // }
-
-        // // will be refactoring code to look more like this i think
-        //  ReadInvertedFile invertFile = new ReadInvertedFile();
       
-
-        // // Use try-with-resources to handle the file writing
-        //     try{
-        //          Stream<String> invertedStream = invertFile.readFileInList(filePath).stream().collect(ReadInvertedFile.reverseStream());
-        //         try (PrintWriter writer = new PrintWriter(outputPath)) {
-        //         invertedStream.forEach(writer::println);
-        //     }
     }
     // closes main method
 }

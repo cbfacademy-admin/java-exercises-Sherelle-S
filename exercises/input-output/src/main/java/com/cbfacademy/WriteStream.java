@@ -27,7 +27,6 @@ public class WriteStream {
             writingFile.close();
             
         } catch (Exception e) {
-            // TODO: handle exception
         }finally{
             System.out.println("Process complete");
         }
