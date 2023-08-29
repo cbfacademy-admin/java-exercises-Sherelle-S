@@ -1,9 +1,11 @@
 package com.cbfacademy;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -16,37 +18,45 @@ import java.util.stream.Stream;
 public class ReadInvertedFile {
     // // create a programme to invert the exercise.txt file
     public void ReadInvertedFile (String fileName, String outputPath) throws IOException{
-        List <String> textLine =  Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
+        // creating a method that passes in the input and output path of files to written and read drom main. throws IO Exception if unable to complete
+        try {
+            // openein try catch block
+            List <String> textLine =  Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
+            /* File - static method that allows file to be manipulated in this case it grants access to:
+            * reads all lines in the file 
+            * which we get from the path stored in the variable filename.
+            *standardCharset in eight-bit UCS transformation format. (extends ASCII character set to use 8-bit code points)
+            */ 
         Collections.reverse(textLine);
-
+            // uses collections to reverse the textLines String
         List<String> reversedLines = textLine.stream().collect(Collectors.toList());
-
+            // Creates a new string called reversedLines where textLines are turned into a stream and the terminal process of collect is used. the collectors are turned into a list
        Files.write(Paths.get(outputPath), reversedLines);
+    //    using files to gather all associated files, and write them to the outputPath parameter. reversedLines list is what is being written.
         System.out.println(reversedLines);
+        // checking that reversed lines actually revesed the lines of the file
+        } catch (FileNotFoundException e){
+            // file not found exception
+            e.printStackTrace();
+            // prints the location exception occures
+        }catch(FileAlreadyExistsException e){
+            // file already exists exception
+            System.out.println(outputPath + " name already exists, please select another name");
+            // asks user for new output path name
+        } catch (IOException e) {
+            // catches io exception
+            System.err.println("File not found, please check file path");
+            // file not found
+            e.printStackTrace();
+            // prints location exception occurs 
+        }catch(Exception e) {
+            // catches all other exceptions
+            e.printStackTrace();
+            // prints location exception occurs
+        }
+        // closes try catch block
     }
-    // return textLine;
-//    public List<String> readFileInList(String fileName){
-//     // creates a list of strings called readFileList passing in fileName which is the input string.
-//         try{
-//             // opens trycatch block
-//             return Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
-//             /* File - static method that allows file to be manipulated in this case it grants access to:
-//             * reads all lines in the file 
-//             * which we get from the path stored in the variable filename.
-//             *standardCharset in eight-bit UCS transformation format. (extends ASCII character set to use 8-bit code points)
-//             */ 
+    // closes method
 
-//         }catch(IOException e){
-//             System.out.println("Fatal error");
-//             return Collections.emptyList();
-//         }
-//         // DELELE return lines;
-//     }
-//     // for loop with control flows look into the reverse method that collections have
-//     public static  <T> Collector<T, ?, Stream<T> > reverseStream(){
-//         return Collectors.collectingAndThen(Collectors.toList(), list -> {
-//             Collections.reverse(list);
-//             return list.stream();
-//         });
-//     // } 
 }
+// closes class
