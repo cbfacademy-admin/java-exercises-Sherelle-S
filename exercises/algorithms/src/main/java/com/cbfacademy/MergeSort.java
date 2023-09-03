@@ -12,8 +12,11 @@ public class MergeSort {
 
         // left will be assigned to 0 and right will be assigned to n-1
         int midIndex = inputLength / 2;
+        // assigns midIndex to halfway through the input array.
         int[] leftHalf = new int[midIndex];
+        // makes a new array as the left half of the original array 
         int[] rightHalf = new int[inputLength - midIndex];
+        // makes a new array and assigns it to the right half of the array.
         // now populate the two arrays 
         /* for(int i = 0; i < midIndex; i++){
             leftHalf[i] = inputArray[i];
