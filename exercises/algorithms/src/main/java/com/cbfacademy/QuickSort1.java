@@ -3,7 +3,7 @@ package com.cbfacademy;
 import java.util.Arrays;
 import java.util.Random;
 
-public class QuickSort {
+public class QuickSort1 {
     public static void main(String[] args) {
              
         Random rand = new Random();
@@ -23,33 +23,13 @@ public class QuickSort {
     
     }
 
-    private static void quicksort(int[] array){
-        quicksort(array, 0, array.length-1);
-    }
-
    private static void quicksort(int[] array, int lowIndex, int highIndex){
 
     if(lowIndex >= highIndex){
         return;
     }
 
-    int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
-    int pivot = array[pivotIndex];
-    swap(array, pivotIndex, highIndex);
-
-    int leftPointer=partition(array, lowIndex, highIndex, pivot);
-    
-    quicksort(array, lowIndex, leftPointer-1);
-    quicksort(array, leftPointer+1, highIndex);
-   }
-
-   private static void swap(int[] array, int index1, int index2){
-    int temp = array[index1];
-    array[index1] = array[index2];
-    array[index2] = temp;
-   }
-
-   private static int partition(int[] array,int lowIndex, int highIndex, int pivot){
+    int pivot = array[highIndex];
     int leftPointer = lowIndex;
     int rightPointer = highIndex;
 
@@ -67,5 +47,13 @@ public class QuickSort {
     }
 
     swap(array, leftPointer, highIndex);
+    quicksort(array, lowIndex, leftPointer-1);
+    quicksort(array, leftPointer+1, highIndex);
+   }
+
+   private static void swap(int[] array, int index1, int index2){
+    int temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
    }
 }

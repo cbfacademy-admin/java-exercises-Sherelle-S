@@ -1,4 +1,4 @@
-package com.cbfacademy;
+package com.cbfacademy.classExercises;
 
 public class LinearSearch {
     public static void main(String[] args) {
