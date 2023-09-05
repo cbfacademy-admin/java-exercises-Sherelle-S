@@ -6,8 +6,7 @@ public class NioMain {
     public static void main(String[] args) {
         try{
             String filePath = "src/main/resources/exercise.txt";
-            // input filepath
-            String outputPath = "src/main/resources/writingExercise.txt";  
+            // input filepath  
             // output filepath
             String inverterdPath = "src/main/resources/inverted.txt"; 
             

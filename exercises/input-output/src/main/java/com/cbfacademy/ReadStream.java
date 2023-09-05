@@ -16,7 +16,7 @@ public class ReadStream {
             // declaring method witht the string perameter of inputPath, it throws an input output exception if neccessary
             try (
                 // opens a try with rescources catch block, it autocloses no matter the outcome of the method
-                Stream<String> lines = Files.lines(Path.of(inputPath));){               
+                Stream<String> lines = Files.lines(Path.of(inputPath))){               
                 // declares a stream method as variabled lines. it then uses lines to get the path to input file
                 
                 lines.forEach(System.out::println);
