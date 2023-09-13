@@ -9,7 +9,6 @@ public class CurrentAccount extends Account {
         this.setOverdraftLimit(overdraftLimit);
     }
 
-    
     public double getOverdraftLimit(){
         return overdraftLimit;
     }
@@ -24,6 +23,7 @@ public class CurrentAccount extends Account {
 
         double overdrawn = 0;
 
+<<<<<<< HEAD
         if(withdraw < 0){
             System.out.println("Invalid transaction");
         }
@@ -43,6 +43,27 @@ public class CurrentAccount extends Account {
                 if(balance < 0){
 
                     overdrawn += balance;
+=======
+       if(withdraw <= 0){
+        System.out.println("Invalid Transaction");
+        withdraw = 0;
+       }
+           
+        if(withdraw <= this.balance){
+            
+                this.balance -= withdraw;
+                System.out.println("£"+withdraw + " have been withdrawn from this account. £" +this.balance+ " is remaining.");
+        
+        }else if(this.balance + overdraftLimit >= withdraw){
+            /*use this over the one below for readablilty 
+        }else if(balance - withdraw < 0 && balance - withdraw >= -overdraftLimit){
+*/
+            this.balance -= withdraw;
+            System.out.println("Your new balance is £"+ this.balance);
+                if(this.balance < 0){
+
+                    overdrawn += this.balance;
+>>>>>>> 216060d (account updated and complete)
                     System.out.println("You are overdrawn by £" +overdrawn);
 
                 }else{
