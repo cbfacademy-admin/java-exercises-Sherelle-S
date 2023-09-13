@@ -1,4 +1,5 @@
 package com.cbfacademy;
+
 import com.cbfacademy.people.ExtraPerson;
 import com.cbfacademy.people.ImmutablePerson;
 
