@@ -1,0 +1,74 @@
+package com.cbfacademy;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        // Read the file
+        String filePath = "src/main/resources/exercise.txt";
+        String outputPath = "src/main/resources/inverted.txt";
+        // WriteFile writeFile = new WriteFile();
+
+        // // filePath.writeFile();
+        // InvertedFile invertedFile = new InvertedFile();
+
+        // // String data = readFileAsString("src/main/resources/exercise.txt");
+        // String data = invertedFile.readFileAsString(filePath);
+
+        // System.out.println(data);
+        ReadInvertedFile invertFile = new ReadInvertedFile();
+
+        // List huh = invertFile.readFileInList(filePath);
+
+        // Iterator<String> itr = huh.iterator();
+        // while(itr.hasNext())
+        // System.out.println(itr.next());
+try {
+    
+
+       Stream<String> stream = invertFile.readFileInList(filePath).parallelStream();
+
+        stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println);
+
+       Path fileName = Path.of(outputPath);
+
+    //    Files.writeString(fileName, text)
+    // String content = stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println);
+    
+    // try(FileOutputStream outputStream = new FileOutputStream(filePath.toFile());
+    // DataOutputStream dataOutStream = new DataOutputStream(new BufferedOutputStream(outputStream));){
+    //     dataOutStream.writeUTF(stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
+    //     dataOutStream.writeInt(10);
+    //     dataOutStream.writeLong(100l);
+    // }
+    Files.write(outputPath, stream.collect(ReadInvertedFile.reverseStream()).forEach(System.out::println));
+            System.out.println("Content inverted and written to 'inverted.txt' successfully.");
+           
+            } catch (Exception e) {
+    // TODO: handle exception
+}
+       
+    }
+
+}
+
+    
+
+// put a buffered reader arounf the stream reader to get access to the
