@@ -1,0 +1,15 @@
+1. the requested URL is /martignon/index.html HTTP/1.1. We are requsting the index.html file from the martignon website.
+
+2.HTTP version 1.1
+
+3.
+The browser asks for a persistent connection.
+a persistent connection is a connection is is one that is constantly open indicated by the "connection: keep-alive" header in the request.
+a non persistent connection is one that is closed after serving a single HTTP request and response cycle. A new request is made after each response is received.
+
+4. indicating the browser version and type lets us know what data to serve up and how to deal with browser specific issues. If the user is using an older browser with known issues we may choose to omit certain features from the website or serve them up differently.
+
+Exercise 2
+or 200 for request ok
+304 Not Modified - This response indicates that the resource has not been modified since the date specified in the "If-modified-since" header. As a result, the server doesn't send the resource again in the response body but rather informs the client that it can continue to use its cached copy of the resource. This response is a way to save bandwidth and reduce unnecessary data transfer when the client's cached copy is still valid.
+
