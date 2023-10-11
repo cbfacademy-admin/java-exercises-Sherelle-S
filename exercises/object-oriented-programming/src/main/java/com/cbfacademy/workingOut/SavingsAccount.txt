@@ -1,0 +1,16 @@
+// import com.cbfacademy.accounts.Account;
+
+// public class SavingsAccount extends Account {
+//     private double interest;
+//     public SavingsAccount(double balance, int accountNumber, double interest){
+//         super(balance, accountNumber);
+//         this.interest = interest;
+//     }
+
+//     // @Override
+//     //     public void depositFunds(int deposit){
+//     //     setBalance() += interest;
+//     //    }
+//     //    what if balance is already in the negative
+           
+// }

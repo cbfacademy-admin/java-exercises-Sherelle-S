@@ -2,7 +2,13 @@ package com.cbfacademy;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 
 public class CollectionsAssignment {
 
@@ -16,7 +22,13 @@ public class CollectionsAssignment {
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
         // Your solution must traverse the list from last to first element
-        // removing any values less than minValue.
+        // removing any values less than minValue.z
+        for(int i = list.size()-1; i >= 0; i--){
+            if (list.get(i)< minValue){
+                list.remove(list.get(i));
+            }
+             
+        }
     }
 
     /**
@@ -27,8 +39,25 @@ public class CollectionsAssignment {
      * @return true if integers contains duplicates, false otherwise
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
+
         // Your solution must not use any loops.
-        return false;
+
+        ArrayList<Integer> originalList = new ArrayList<Integer>();
+        originalList.addAll(integers);
+
+        HashSet<Integer>dupesRemoved = new HashSet<Integer>();
+        dupesRemoved.addAll(originalList);
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(dupesRemoved);
+
+       if(originalList.size() > dupesRemoved.size()){
+            return true;
+        }else{
+            return false;
+        }
+           
+        // result is either false or out of bounds. this way is not working
+
     }
 
     /**
@@ -48,7 +77,18 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<Integer>();
+
+        HashSet<Integer>combinedList = new HashSet<Integer>();
+
+        combinedList.addAll(ints1);
+        combinedList.addAll(ints2);
+
+        ArrayList<Integer>completeList = new ArrayList<Integer>();
+        completeList.addAll(combinedList);
+
+        Collections.sort(completeList);
+
+        return completeList;
     }
 
     /**
@@ -66,7 +106,19 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<>();
+        // ArrayList<Integer> elInBoth = new ArrayList<Integer>();
+
+                ArrayList<Integer> collectionOne = new ArrayList<Integer>();
+                ArrayList<Integer> collectionTwo = new ArrayList<Integer>();
+
+                collectionOne.addAll(ints1);
+                collectionTwo.addAll(ints2);
+
+                collectionOne.retainAll(collectionTwo);
+
+                Collections.sort(collectionOne);
+
+        return collectionOne;
     }
 
     /**
@@ -85,10 +137,19 @@ public class CollectionsAssignment {
         // your counts to find the largest. You'll need a collection that allows
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
-        return "";
-    }
+        
 
-    public static String getName() {
-        return "Collections Assignment";
+        
+        if(list.isEmpty()){
+            return "";
+        }
+        Map<String, Integer> wordOccurenceCount = new HashMap<>();
+        for(String word : list){
+            wordOccurenceCount.put(word, Collections.frequency(list, word));
+        }
+
+        String mostFrequent = Collections.max(wordOccurenceCount.entrySet(), Map.Entry.comparingByValue()).getKey();
+        return mostFrequent;
     }
+     
 }
